@@ -1,3 +1,3 @@
 # JSF PlayGround
 
-## This project containt all practices related to JavaServer Faces.
+## This project contains all practices related to JavaServer Faces.
