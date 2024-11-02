@@ -2,17 +2,19 @@ package de.miladsa.jsfplayground.actions;
 
 import de.miladsa.jsfplayground.components.DayOfWeekResolverForm;
 import de.miladsa.jsfplayground.services.DayOfWeekResolverServiceImplementation;
-import org.springframework.stereotype.Component;
-import org.springframework.web.context.annotation.RequestScope;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 import java.io.Serializable;
 
-@Component
-@RequestScope
+@ViewScoped
+@Named(value = "dayOfWeekResolverAction")
 public class DayOfWeekResolverAction implements Serializable {
-    private DayOfWeekResolverForm dayOfWeekResolverForm;
-    private DayOfWeekResolverServiceImplementation dayOfWeekResolverServiceImplementation;
+    private final DayOfWeekResolverForm dayOfWeekResolverForm;
+    private final DayOfWeekResolverServiceImplementation dayOfWeekResolverServiceImplementation;
 
+    @Inject
     public DayOfWeekResolverAction(DayOfWeekResolverForm dayOfWeekResolverForm, DayOfWeekResolverServiceImplementation dayOfWeekResolverServiceImplementation) {
         this.dayOfWeekResolverForm = dayOfWeekResolverForm;
         this.dayOfWeekResolverServiceImplementation = dayOfWeekResolverServiceImplementation;
