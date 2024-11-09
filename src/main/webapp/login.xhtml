@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Resolves a date to a day of the week"/>
+    <meta name="author" content="Tsepo Maleka"/>
+
+    <title>Login</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css"/>
+
+</h:head>
+<h:body>
+    <h:form id="loginForm">
+        <h3>Login with Phone/National ID</h3>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="phoneNumber" value="Phone Number:"/>
+            <h:inputText id="phoneNumber" value="#{loginBean.phoneNumber}"/>
+
+            <h:outputLabel for="nationalId" value="National ID:"/>
+            <h:inputText id="nationalId" value="#{loginBean.nationalId}"/>
+
+            <h:commandButton value="Login" action="#{loginBean.loginWithPhoneNationalId()}"/>
+        </h:panelGrid>
+
+        <h:messages globalOnly="true"/>
+    </h:form>
+</h:body>
+
+</html>
