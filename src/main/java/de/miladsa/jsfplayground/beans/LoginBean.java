@@ -20,7 +20,7 @@ public class LoginBean implements Serializable {
 
     private String phoneNumber;
     private String nationalId;
-    
+
     public String loginWithPhoneNationalId() {
         try {
             ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
@@ -30,7 +30,7 @@ public class LoginBean implements Serializable {
             request.login(phoneNumber, nationalId);
             return "/home.xhtml?faces-redirect=true";
         } catch (ServletException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             FacesContext.getCurrentInstance().addMessage(
                     null,
                     new FacesMessage(
